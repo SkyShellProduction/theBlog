@@ -1,0 +1,18 @@
+@@include('./view/common/head.html', {
+    "class": "portfolio"
+})
+@@include('./view/header/header.html')
+<main class="main">
+    <div class="slider__about">
+        <div class="container">
+            @@include('./view/slider/slider.html', {
+                "text": "I help people and companies shine online",
+                "link": "contact me"
+            })
+        </div>
+        <img src="images/pixel.png" alt="" class="slider__img">
+    </div>
+   @@include('./view/works/works.html')
+   <a href="#" class="author">lenalee</a>
+</main>
+@@include('./view/common/footer.html')

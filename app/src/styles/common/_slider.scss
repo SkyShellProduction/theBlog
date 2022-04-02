@@ -1,0 +1,108 @@
+.slider{
+    min-height: 590px;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__main{
+        position: relative;
+        padding-top: 30px;
+        background: url(../images/tetris.png) no-repeat center/cover;
+    }
+    &Lines{
+        position: relative;
+        flex-grow: 1;
+    }
+    &__text{
+        max-width: 850px;
+        width: 100%;
+        &-descr{
+            font-family: 'PressStart2P';
+            font-size: 50px;
+            line-height: 115%;
+            letter-spacing: 0.15em;
+            text-transform: capitalize;
+            color: #FFF500;
+            margin-bottom: 70px;
+        }
+        &-link{
+            display: block;
+            max-width: 300px;
+            width: 100%;
+            margin-left: auto;
+            text-align: center;
+            color: $whiteColor;
+            background: $violetColor;
+            padding: 17px 0;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 115%;
+        }
+    }
+    &__prev, &__next{
+        position: absolute;
+        background: transparent;
+        cursor: pointer;
+        img{
+            width: auto;
+        }
+    }
+    &__prev{
+        transform: rotate(180deg);
+    }
+    &__next{
+        right: 0;
+    }
+    &__about{
+        position: relative;
+        padding-top: 25px;
+        .slider__text{
+            padding-left: 100px;
+        }
+        .slider__text-link{
+            margin-left: 0;
+        }
+    }
+    &__img{
+        width: auto;
+        position: absolute;
+        top: 70px;
+        right: 25%;
+        z-index: -1;
+    }
+}
+
+@media(max-width: 840px){
+    .slider{
+        &__text-descr{
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+        &__img{
+            display: none;
+        }
+        &__about{
+            .slider__text{
+                padding-left: 0;
+            }
+        }
+    }
+}
+@media(max-width: 550px){
+    .slider{
+        min-height: 300px;
+        &__text-link{
+            max-width: 200px;
+            padding: 10px 0;
+            font-size: 12px;
+        }
+        &__text-descr{
+            font-size: 24px;
+        }
+        &__prev, &__next{
+            display: none;
+        }
+    }
+}

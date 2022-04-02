@@ -1,0 +1,77 @@
+$blackColor: #111;
+$whiteColor: #fff;
+$violetColor: #4e5eff;
+$violetLight: #6472ff;
+$violetDark: #313db5;
+$fonts: ('Goldman', 'Regular', 400),
+('Nunito', 'Regular', 400),
+('PressStart2P', 'Regular', 400),
+('Poppins', 'Regular', 400),
+('Poppins', 'SemiBold', 600);
+
+@each $name,
+$se,
+$weight in $fonts {
+    @font-face {
+        font-family: $name;
+        src: url("../fonts/#{$name}-#{$se}.ttf") format('truetype'),
+        url("../fonts/#{$name}-#{$se}.woff") format('woff');
+        font-weight: $weight;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+    font-family: 'Goldman';
+
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1330px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+body {
+    background: url(../images/main-bg.jpg) no-repeat center/cover;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+body.hidden {
+    overflow: hidden;
+}
+
+.main {
+    position: relative;
+}
+
+.author {
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    font-family: 'PressStart2P';
+    font-size: 18px;
+    line-height: 18px;
+    color: #FFF500;
+    text-transform: uppercase;
+
+}

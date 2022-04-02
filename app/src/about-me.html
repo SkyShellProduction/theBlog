@@ -1,0 +1,18 @@
+@@include('./view/common/head.html', {
+    "class": "about-me"
+})
+@@include('./view/header/header.html')
+<main class="main">
+    <div class="slider__about">
+        <div class="container">
+            @@include('./view/slider/slider.html', {
+                "text": "hi, <br>i`m matt,<br> web developer",
+                "link": "contact me"
+            })
+        </div>
+        <img src="images/Matt.png" alt="" class="slider__img">
+    </div>
+   @@include('./view/about/about.html')
+   <a href="#" class="author">lenalee</a>
+</main>
+@@include('./view/common/footer.html')

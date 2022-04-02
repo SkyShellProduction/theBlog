@@ -1,0 +1,18 @@
+@@include('./view/common/head.html', {
+    "class": "home"
+})
+@@include('./view/header/header.html')
+<main class="main">
+    <div class="slider__main">
+        <div class="container">
+            @@include('./view/slider/slider.html', {
+                "text": "make your product happen",
+                "link": "let's get started"
+            })
+        </div>
+    </div>
+    @@include('./view/skills/skills.html')
+    @@include('./view/recent-works/recent.html')
+    <a href="#" class="author">lenalee</a>
+</main>
+@@include('./view/common/footer.html')

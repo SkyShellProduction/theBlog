@@ -1,0 +1,135 @@
+.logo {
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 115%;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    position: relative;
+    z-index: 81;
+    img {
+        width: auto;
+        margin-right: 5px;
+    }
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: 0.3s linear;
+    padding: 20px 0 18px;
+    &.active{
+        background: rgba(0, 0, 0, 0.9);
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__link {
+        display: block;
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height: 115%;
+        letter-spacing: 0.15em;
+        color: $whiteColor;
+        margin: 0 34px;
+        &:hover, &.active{
+            color: $violetColor;
+        }
+    }
+    &__abs{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 50;
+        background: rgba(31, 8, 28, 0.7);
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+    &__btn{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        background: #fff;
+        position: relative;
+        z-index: 81;
+        .bars{
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: #000;
+            position: relative;
+            &::before, &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: #000;
+                transition: 0.3s linear;
+                top: 8px;
+            }
+            &::before{
+                top: -8px;
+            }
+        }
+        &.active{
+            .bars{
+                background: transparent;
+                &::before{
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+                &::after{
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 950px){
+    .header{
+        &__btn{
+            display: flex;
+        }
+        &__list{
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            padding-top: 100px;
+            z-index: 80;
+            right: -200px;
+            transition: 0.3s linear;
+            height: 100%;
+            width: 200px;
+            background: rgba(0, 0, 0, 0.85);
+            &.active{
+                right: 0;
+                box-shadow: 0 0 15px 3px rgb(53, 224, 246);
+            }
+        }
+        &__link{
+            margin: 20px;
+        }
+    }
+}
